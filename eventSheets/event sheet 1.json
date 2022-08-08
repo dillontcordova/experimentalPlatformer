@@ -1,0 +1,276 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 245915334029068,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "spr_player",
+					"sid": 639135889796307,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 513133407722820
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 711285105095691,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "spr_player",
+					"sid": 843884802422403,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 220505042056788
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 382352451286977,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "spr_player",
+					"sid": 395999200718424,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "jump"
+					}
+				}
+			],
+			"sid": 969794028794028
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "spr_player",
+					"sid": 408840130797754,
+					"parameters": {
+						"object": "spr_collision_death"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "spr_player",
+					"sid": 548649059227338,
+					"parameters": {
+						"object": "par_respawn",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "spr_player",
+					"sid": 579750071950937
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 242071717768599,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "spr_start",
+					"sid": 633889191659294,
+					"parameters": {
+						"object": "par_respawn",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "spr_start",
+					"sid": 547040133981913,
+					"parameters": {
+						"object": "spr_player",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 227312078011786
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "spr_player",
+					"sid": 206488681790789,
+					"parameters": {
+						"object": "spr_exit"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "spr_player",
+					"sid": 548580363148557,
+					"parameters": {
+						"object": "par_respawn",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "spr_player",
+					"sid": 610382602739860
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 438751377366204,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 363300835367398,
+					"parameters": {
+						"layout": "Layout 2"
+					}
+				}
+			],
+			"sid": 635462259543778
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "mouse-button-is-down",
+					"objectClass": "Mouse",
+					"sid": 404394134041706,
+					"parameters": {
+						"mouse-button": "left"
+					}
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 666825146105790,
+					"parameters": {
+						"object": "btn_nextLevel"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "btn_nextLevel",
+					"sid": 899691207018248,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 740352843443868
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 175866255919558
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "btn_nextLevel",
+					"sid": 755343197968877,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 241659534946682
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-released",
+					"objectClass": "Mouse",
+					"sid": 957391840040556,
+					"parameters": {
+						"mouse-button": "left"
+					}
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 741575143095277,
+					"parameters": {
+						"object": "btn_nextLevel"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 175951654718115,
+					"parameters": {
+						"layout": "Layout 1"
+					}
+				}
+			],
+			"sid": 412652471552317
+		}
+	],
+	"sid": 174236707040383
+}
